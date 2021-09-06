@@ -11,7 +11,7 @@ class Entrada(commands.Cog):
 
     @commands.command()
     async def entrada(self, ctx):
-        now = datetime.utcnow().astimezone(pytz.timezone("America/Sao_Paulo"))
+        now = datetime.utcnow()
 
         horarios: Collection = self.bot.db['horarios']
         
