@@ -19,12 +19,12 @@ class Entrada(commands.Cog):
                 'horario': now,
             })
         except:
-            return await ctx.send("Você já bateu seu ponto hoje!")
+            return await ctx.send("Você já registrou seu horario!")
             
         embed = discord.Embed() \
-            .set_author(name="Bate ponto",
+            .set_author(name="Event Log",
                         icon_url="https://i.imgur.com/1sj9bou.png") \
-            .add_field(name="Você bateu o ponto!!",
+            .add_field(name="Você registrou o seu horario!!",
                        value=f'⠀⠀⠀⠀⠀',
                        inline=False) 
         return await ctx.send(embed=embed)

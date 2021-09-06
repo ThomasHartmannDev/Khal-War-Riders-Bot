@@ -22,14 +22,14 @@ def prefix_format(prefixes):
 if __name__ == "__main__":
     #dev_mode = input("Abrir em modo desensolvedor?(Sim = 1 | Não = 0) ")
     #config_file = 'config_dev.json' if dev_mode == '1' else 'config.json'
-    config_file = 'config.json'
+    config_file = 'secret.json'
     with open(f'./data/{config_file}') as config:
         config = json.load(config)
 
     bot = commands.Bot(command_prefix=prefix_format(
         config['prefixes']), case_insensitive=True, help_command=None)
     bot.config = config
-    bot.db = pymongo.MongoClient(config['mongoURL'])['ArenaSotBR']
+    bot.db = pymongo.MongoClient(config['mongoURL'])['KhalBotWarRiders']
 
     @bot.event
     async def on_ready():
@@ -69,9 +69,9 @@ if __name__ == "__main__":
             
             channel_bzn = bot.get_channel(881386157064204328)
             channel_slp = bot.get_channel(881387064740941905)         
-        #    await channel_bzn.send(embed=bzn_embed)
-        #    await channel_slp.send(embed=slp_embed)
-            await asyncio.sleep(300)
+            await channel_bzn.send(embed=bzn_embed)
+            await channel_slp.send(embed=slp_embed)
+            await asyncio.sleep(1800)
         
 
         

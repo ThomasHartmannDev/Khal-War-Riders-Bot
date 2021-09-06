@@ -46,7 +46,7 @@ class Saida(commands.Cog):
                 time += item
 
             embed = discord.Embed() \
-                .set_author(name="Bate Ponto",
+                .set_author(name="Event Log",
                             icon_url="https://i.imgur.com/1sj9bou.png") \
                 .add_field(name=":inbox_tray: Entrada:",
                            value=f'{texto(horario)}',
@@ -61,7 +61,7 @@ class Saida(commands.Cog):
             channel = self.bot.get_channel(881007084974514186)
 
             return await channel.send(ctx.author.mention, embed=embed)
-        await ctx.send("Voce não bateu o ponto de entrada!")
+        await ctx.send("Voce não registrou seu horário, use !entrada")
 
 
 def texto(date: datetime) -> str:
