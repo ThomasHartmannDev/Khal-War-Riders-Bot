@@ -18,7 +18,7 @@ class Saida(commands.Cog):
 
         if horario:
             horarios.delete_one({'_id': ctx.author.id})
-            horario = horario['horario'].astimezone(pytz.timezone('America/Sao_Paulo'))
+            horario = horario['horario']
 
             now = datetime.utcnow().astimezone(pytz.timezone("America/Sao_Paulo"))
             diff: timedelta = now - horario
