@@ -1,8 +1,7 @@
-import pytz
 import discord
 from discord.ext import commands
 from pymongo.collection import Collection
-from datetime import datetime, timedelta
+from datetime import datetime, timezone, timedelta
 
 
 class Saida(commands.Cog):
@@ -18,9 +17,11 @@ class Saida(commands.Cog):
 
         if horario:
             horarios.delete_one({'_id': ctx.author.id})
-            horario = horario['horario']
 
-            now = datetime.utcnow().astimezone(pytz.timezone("America/Sao_Paulo"))
+            horario = horario['horario'].replace(
+                tzinfo=timezone.utc).astimezone(timezone(-timedelta(hours=3)))
+
+            now = datetime.now(timezone(-timedelta(hours=3)))
             diff: timedelta = now - horario
             time = ''
             times = []
@@ -33,7 +34,7 @@ class Saida(commands.Cog):
                 times.append(s(minutes, 'minuto'))
             if seconds > 0:
                 times.append(s(seconds, 'segundo'))
-            
+
             if len(times) == 0:
                 time += '0 segundos'
 
@@ -44,22 +45,20 @@ class Saida(commands.Cog):
                     time += f', '
                 time += item
 
-
-
             embed = discord.Embed() \
-            .set_author(name="Bate Ponto",
-                        icon_url="https://i.imgur.com/1sj9bou.png") \
-            .add_field(name=":inbox_tray: Entrada:",
-                       value=f'{texto(horario)}',
-                       inline=False) \
-            .add_field(name=":outbox_tray: Saida:",
-                       value=f'{texto(now)}',
-                       inline=False) \
-            .add_field(name=":label:  Tempo jogado:",
-                       value=f'{time}',
-                       inline=False) 
+                .set_author(name="Bate Ponto",
+                            icon_url="https://i.imgur.com/1sj9bou.png") \
+                .add_field(name=":inbox_tray: Entrada:",
+                           value=f'{texto(horario)}',
+                           inline=False) \
+                .add_field(name=":outbox_tray: Saida:",
+                           value=f'{texto(now)}',
+                           inline=False) \
+                .add_field(name=":label:  Tempo jogado:",
+                           value=f'{time}',
+                           inline=False)
 
-            channel = self.bot.get_channel(881007084974514186)     
+            channel = self.bot.get_channel(881007084974514186)
 
             return await channel.send(ctx.author.mention, embed=embed)
         await ctx.send("Voce não bateu o ponto de entrada!")

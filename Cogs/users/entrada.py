@@ -1,9 +1,7 @@
-import pytz
 import discord
-from discord.colour import Color, Colour
 from discord.ext import commands
 from pymongo.collection import Collection
-from datetime import date, datetime
+from datetime import datetime, timezone, timedelta
 
 class Entrada(commands.Cog):
     def __init__(self, bot):
