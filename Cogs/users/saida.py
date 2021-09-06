@@ -59,10 +59,9 @@ class Saida(commands.Cog):
                        value=f'{time}',
                        inline=False) \
 
-            return await ctx.send(embed=embed)
-            #channel = self.bot.get_channel(881007084974514186)     
-            # favor fazer o bot mencionar a pessoa que o !saida no já no canal correto.
-            #return await channel.send(embed=embed)
+            channel = self.bot.get_channel(881007084974514186)     
+
+            return await channel.send(ctx.author.mention, embed=embed)
         await ctx.send("Voce não bateu o ponto de entrada!")
 
 
