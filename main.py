@@ -71,7 +71,7 @@ if __name__ == "__main__":
             channel_slp = bot.get_channel(881387064740941905)         
         #    await channel_bzn.send(embed=bzn_embed)
         #    await channel_slp.send(embed=slp_embed)
-            await asyncio.sleep(60)
+            await asyncio.sleep(300)
         
 
         

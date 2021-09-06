@@ -57,7 +57,7 @@ class Saida(commands.Cog):
                        inline=False) \
             .add_field(name=":label:  Tempo jogado:",
                        value=f'{time}',
-                       inline=False) \
+                       inline=False) 
 
             channel = self.bot.get_channel(881007084974514186)     
 

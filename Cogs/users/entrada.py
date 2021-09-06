@@ -21,7 +21,7 @@ class Entrada(commands.Cog):
                 'horario': now,
             })
         except:
-            await ctx.send("Você já bateu seu ponto hoje!")
+            return await ctx.send("Você já bateu seu ponto hoje!")
             
         embed = discord.Embed() \
             .set_author(name="Bate ponto",
