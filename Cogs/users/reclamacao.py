@@ -11,7 +11,7 @@ class Free_Agent(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def Freeagent(self, ctx):
+    async def feedback(self, ctx):
         user = ctx.message.author
         channel = await user.create_dm()
         await ctx.message.delete()
@@ -90,4 +90,4 @@ class Free_Agent(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(Free_Agent(bot))
+    bot.add_cog(feedback(bot))
