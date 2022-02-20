@@ -4,13 +4,13 @@ from discord.ext import commands
 cor = 0xFF0000
 
 
-channel_id = #COLOCAR ID DA SALA
+channel_id = 661424992835338280 #COLOCAR ID DA SALA
 
-class Free_Agent(commands.Cog):
+class Feedback(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
+    @commands.command(aliases=["reclamação", "reclamaçao", "reclamacao"])
     async def feedback(self, ctx):
         user = ctx.message.author
         channel = await user.create_dm()
@@ -20,7 +20,7 @@ class Free_Agent(commands.Cog):
             Start2.set_author(
                 name="Olá, seja bem vindo ao centro de reclamações.", icon_url="https://i.imgur.com/c7fWRRb.png")
             Start2.add_field(name=f'**{ctx.message.author.display_name} Seja claro ao fazer sua reclamação e tambem seja paciente alguem de nossa Staff entrará em contato.**',
-                             value=f"", inline=False)
+                             value=f"\u200b", inline=False)
             start2 = await channel.send(embed=Start2)
 
             try:
@@ -57,12 +57,9 @@ class Free_Agent(commands.Cog):
                 
                 
                 await channel.send(f"Reclamação ou Feedback {ctx.author.mention}")
-                await channel.send(msg1)
-                
-               
+                await channel.send(msg1.content)
 
             except Exception as e:
-
                 embed = discord.Embed(color=0xFF0000)
                 embed.set_author(name="O Seu tempo acabou!!")
                 
@@ -90,4 +87,4 @@ class Free_Agent(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(feedback(bot))
+    bot.add_cog(Feedback(bot))
