@@ -4,7 +4,7 @@ from discord.ext import commands
 cor = 0xFF0000
 
 
-channel_id = 661424992835338280 #COLOCAR ID DA SALA
+channel_id = 944757804185563228 #COLOCAR ID DA SALA
 
 class Feedback(commands.Cog):
     def __init__(self, bot):
