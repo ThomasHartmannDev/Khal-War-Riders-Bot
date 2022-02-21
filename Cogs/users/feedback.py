@@ -60,7 +60,7 @@ class Feedback(commands.Cog):
                 fim = discord.Embed(color=0xFF0000)
                 fim.set_author(name=f"Reclamação / Feedback {ctx.author.name}")
                 fim.add_field(name=f"{msg1.content}",
-                              value="`⠀⠀⠀`", inline=False)
+                              value="⠀⠀⠀", inline=False)
                 fim.set_footer(text="Khal Special Forces Feedback", icon_url="https://i.imgur.com/c7fWRRb.png")
                 await channel.send(embed=fim)
                 #await channel.send(msg1.content)
