@@ -19,7 +19,7 @@ class Feedback(commands.Cog):
             Start2 = discord.Embed(color=cor)
             Start2.set_author(
                 name="Olá, seja bem vindo ao centro de reclamações.", icon_url="https://i.imgur.com/c7fWRRb.png")
-            Start2.add_field(name=f'**{ctx.message.author.display_name} Seja claro ao fazer sua reclamação e tambem seja paciente alguem de nossa Staff entrará em contato.**',
+            Start2.add_field(name=f'**{ctx.message.author.display_name} Seja claro ao fazer sua reclamação e tambem seja paciente alguem de nossa Staff entrará em contato. Espere alguns segundos!!**',
                              value=f"\u200b", inline=False)
             start2 = await channel.send(embed=Start2)
 
