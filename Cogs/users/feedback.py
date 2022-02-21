@@ -59,8 +59,6 @@ class Feedback(commands.Cog):
                 await channel.send(f"{ctx.message.guild.default_role} **Reclamação ou Feedback** {ctx.author.mention}")
                 fim = discord.Embed(color=0xFF0000)
                 fim.set_author(name=f"Reclamação / Feedback {ctx.author.name}")
-                fim.add_field(name=f"⠀⠀⠀",
-                              value="⠀⠀⠀", inline=False)
                 fim.set_footer(text="Khal Special Forces Feedback", icon_url="https://i.imgur.com/c7fWRRb.png")
                 await channel.send(embed=fim)
                 await channel.send(msg1.content)
