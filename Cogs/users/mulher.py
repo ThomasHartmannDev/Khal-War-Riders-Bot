@@ -41,7 +41,7 @@ class mulher(commands.Cog):
                 p1 = discord.Embed(color=0xFF0000)
                 p1.set_author(name="Como podemos te ajudar?",
                               icon_url="https://i.imgur.com/c7fWRRb.png")
-                p1.add_field(name="Seja clara e direta, não se preocupe apenas mulheres verão a mensagem e apenas outra mulher entrárá em contato!!",
+                p1.add_field(name="Não se preocupe apenas mulheres verão a mensagem e apenas outra mulher entrárá em contato!!",
                              value="`Envie tudo em apenas uma mensagem.`", inline=False)
                 await channel.send(embed=p1)
                 msg1 = await self.bot.wait_for('message', timeout=600.0, check=lambda x: x.channel == channel and x.author.id == user.id)
