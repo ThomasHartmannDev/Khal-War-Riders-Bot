@@ -19,7 +19,7 @@ class mulher(commands.Cog):
             Start2 = discord.Embed(color=cor)
             Start2.set_author(
                 name="Olá, seja bem vindo ao centro ajuda as mulheres", icon_url="https://i.imgur.com/c7fWRRb.png")
-            Start2.add_field(name=f'**{ctx.message.author.display_name} Com oque podemos te ajudar? Não se preocupe apenas mulheres verão a mensagem e apenas outra mulher entrárá em contato!! Espere alguns segundos!!**',
+            Start2.add_field(name=f'**{ctx.message.author.display_name}> Como podemos ajudar?\nNão se preocupe apenas mulheres verão a mensagem e apenas outra mulher entrárá em contato!! Espere alguns segundos!!**',
                              value=f"\u200b", inline=False)
             start2 = await channel.send(embed=Start2)
 
